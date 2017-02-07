@@ -8,6 +8,19 @@
 
 import UIKit
 
+let IS_IPHONE = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone
+let IS_RETINA = UIScreen.main.scale >= 2.0
+let SCREEN_WIDTH = UIScreen.main.bounds.size.width
+let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+let SCREEN_MAX_LENGTH = max(SCREEN_WIDTH, SCREEN_HEIGHT)
+let SCREEN_MIN_LENGTH = min(SCREEN_WIDTH, SCREEN_HEIGHT)
+let IS_IPHONE_4_OR_LESS = IS_IPHONE && SCREEN_MAX_LENGTH < 568.0
+let IS_IPHONE_5 = IS_IPHONE && SCREEN_MAX_LENGTH == 568.0
+
+let greenColor = UIColor(red: 0/255, green:  120/255, blue: 136/255, alpha: 1)
+var tabBarHeight:CGFloat = 90.0
+
+let defaults = UserDefaults.standard
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
